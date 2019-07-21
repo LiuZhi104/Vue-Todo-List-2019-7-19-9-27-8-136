@@ -1,29 +1,32 @@
 <template>
-  <div slot="height: 100%;">
+  <div>
     <div>
       <Card  class="card">
         <div>
-          <h1> Jquery To Do List</h1>
-          <h6>Simple To Do List with adding and filter by diff status</h6>
+          <h2 id="h2"> Jquery To Do List</h2>
+          <h6 >Simple To Do List with adding and filter by diff status</h6>
         </div>
         <div>
           <input type="text" id="text" v-model="inputContent">
-          <Button type="success" size="small" @click="add">Add</Button>
+          <Button type="success" size="small" @click="add" id="addId">Add</Button>
         </div>
         <div>
           <ul>
-            <li v-for="(item,index) in showItems" style="width: 100%">{{index+1}}. &nbsp; &nbsp;&nbsp;
+            <li v-for="(item,index) in showItems">{{index+1}}. &nbsp; &nbsp;&nbsp;
               <Checkbox v-model="item.isChecked">
-                <del v-if="item.isChecked">{{item.content}}</del>
-                <span v-else>{{item.content}}</span>
               </Checkbox>
+              <input type="text" v-if="item.isEdit" v-model="item.content" @keyup.enter="onSubmit(index)">
+              <span v-else @dblclick="onDblclick(index)">
+                  <del v-if="item.isChecked">{{item.content}}</del>
+                  <span v-else>{{item.content}}</span>
+              </span>
             </li>
           </ul>
         </div>
         <div>
-          <Button type="success" size="small" @click="all">All</Button>
-          <Button type="success" size="small" @click="active">Active</Button>
-          <Button type="success" size="small" @click="complete">Complete</Button>
+          <Button type="success" size="small" @click="all" id="allId">All</Button>
+          <Button type="success" size="small" @click="active" id="activeId">Active</Button>
+          <Button type="success" size="small" @click="complete" id="complete">Complete</Button>
         </div>
       </Card>
     </div>
@@ -47,7 +50,8 @@ export default {
     add(){
       let item={
         content: this.inputContent,
-        isChecked: false
+        isChecked: false,
+        isEdit: false
       }
       this.items.push(item)
       this.showItems.push(item)
@@ -66,8 +70,14 @@ export default {
     all(){
       this.showItems=this.items
 
-    }
+    },
+    onDblclick(index){
+      this.showItems[index].isEdit = true
+    },
 
+    onSubmit(index){
+        this.showItems[index].isEdit=false
+    }
   }
 
 
