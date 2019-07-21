@@ -13,3 +13,62 @@
 .card{
    width:320px; margin: 180px auto
 }
+h3 {
+    margin: 40px 0 0;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    display: inline-block;
+    margin: 0 10px;
+    width: 100%;
+}
+
+a {
+    color: #42b983;
+}
+#allId{
+    margin: 3px;
+    padding: 3px 7px;
+    text-decoration: none;
+    border: 1px solid;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+#addId{
+    display: inline-block;
+    color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 2px;
+    margin-left: 4px;
+    padding: 5px 15px;
+}
+#text{
+    width: 70%;
+    padding: 4px 15px 4px 0;
+}
+#h2{
+    font: normal normal 13px/16px "Open Sans", sans-serif;
+}
+#activeId{
+    margin: 3px;
+    padding: 3px 7px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 6px;
+}
+#complete{
+    margin: 3px;
+    padding: 3px 7px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+
+
+
+
