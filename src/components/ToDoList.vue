@@ -12,20 +12,24 @@
         </div>
         <div>
           <ul>
-            <li v-for="(item,index) in items" style="width: 100%">{{index+1}}. &nbsp; &nbsp;&nbsp;<Checkbox v-model="item.isChecked">{{item.content}}</Checkbox></li>
+            <li v-for="(item,index) in showItems" style="width: 100%">{{index+1}}. &nbsp; &nbsp;&nbsp;
+              <Checkbox v-model="item.isChecked">
+                <del v-if="item.isChecked">{{item.content}}</del>
+                <span v-else>{{item.content}}</span>
+              </Checkbox>
+            </li>
           </ul>
         </div>
         <div>
-          <Button type="success" size="small">All</Button>
-          <Button type="success" size="small">Active</Button>
-          <Button type="success" size="small">Complete</Button>
+          <Button type="success" size="small" @click="all">All</Button>
+          <Button type="success" size="small" @click="active">Active</Button>
+          <Button type="success" size="small" @click="complete">Complete</Button>
         </div>
       </Card>
     </div>
 
   </div>
 </template>
-
 <script>
 export default {
   name: 'HelloWorld',
@@ -35,7 +39,8 @@ export default {
   data(){
     return {
       items: [],
-      inputContent: ""
+      inputContent: "",
+      showItems: []
     }
   },
   methods: {
@@ -45,27 +50,28 @@ export default {
         isChecked: false
       }
       this.items.push(item)
+      this.showItems.push(item)
+    },
+    complete(){
+      this.showItems=this.items.filter((item)=>{
+        return item.isChecked;
+      })
+    },
+    active(){
+      this.showItems=this.items.filter((item)=>{
+        return !item.isChecked;
+      })
+
+    },
+    all(){
+      this.showItems=this.items
+
     }
+
   }
 
 
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+
