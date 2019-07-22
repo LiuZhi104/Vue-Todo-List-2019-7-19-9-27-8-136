@@ -1,6 +1,6 @@
 <template>
     <li >
-        <div class="lefthide">
+        <div >
             <input type="checkbox" v-model="licontent.isChecked">
             <span v-if="!licontent.isEdit" @dblclick="onDblclick(licontent)">
               <del v-if="licontent.isChecked">{{licontent.content}}</del>
