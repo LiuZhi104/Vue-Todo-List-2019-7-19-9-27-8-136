@@ -1,41 +1,18 @@
+
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    background-color: #ccc;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-}
-
-.card{
-   width:320px; margin: 180px auto
-}
-h3 {
-    margin: 40px 0 0;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-li {
-    display: inline-block;
-    margin: 0 10px;
-    width: 100%;
-}
-
-a {
-    color: #42b983;
+    margin-top: 60px;
 }
 #allId{
     margin: 3px;
     padding: 3px 7px;
     text-decoration: none;
-    border: 1px solid;
-    border-radius: 3px;
-    margin-left: 10px;
+    border: 1px solid transparent;
+    border-radius: 6px;
 }
 #addId{
     display: inline-block;
@@ -46,13 +23,6 @@ a {
     margin-left: 4px;
     padding: 5px 15px;
 }
-#text{
-    width: 70%;
-    padding: 4px 15px 4px 0;
-}
-#h2{
-    font: normal normal 13px/16px "Open Sans", sans-serif;
-}
 #activeId{
     margin: 3px;
     padding: 3px 7px;
@@ -60,15 +30,10 @@ a {
     border: 1px solid transparent;
     border-radius: 6px;
 }
-#complete{
+#completeId{
     margin: 3px;
     padding: 3px 7px;
     text-decoration: none;
     border: 1px solid transparent;
     border-radius: 3px;
 }
-
-
-
-
-
