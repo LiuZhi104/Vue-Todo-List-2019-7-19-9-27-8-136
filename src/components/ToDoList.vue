@@ -3,6 +3,7 @@
     <heads></heads>
     <items></items>
     <foot></foot>
+    this is a news {{this.$router.params.userId}}
   </div>
 </template>
 
