@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import items from './items'
+  import items from './itemGroups'
   import heads from './header'
   import foot from './footer'
   export default {
