@@ -6,7 +6,6 @@
             <todo-item v-for="(item,index) in listItems" :key="index" :licontent="item"
                        :itemindex="index"
             >
-                <button type="button" value="delete()"></button>
             </todo-item>
         </ol>
     </div>
@@ -25,19 +24,11 @@
         },
         methods:{
             add(){
-                let item = {
-                    content: this.msg,
-                    isChecked: false,
-                }
-                this.$store.commit('addItem',item)
-                this.msg = ''
-                this.$store.dispatch("addItems",{"content":this.content,"isChecked":this.isChecked});
-            },
-            deleteItem(){
-                this.$store.dispatch("deleteItem",{"content":this.content,"isChecked":this.isChecked});
-            },
-            updateItem(){
-
+            this.$store.dispatch('addItem',this.inputItem);
+            this.inputItem = {
+                content: '',
+                isChecked:false
+			};
             }
 
         },

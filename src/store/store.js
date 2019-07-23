@@ -27,14 +27,6 @@ export  default new Vuex.Store({
         },
         print(state,item){
             state.showItems=item
-        },
-        deleteItem(state){
-            state.showItems.pull(item);
-            state.item.listItems.pull(item);
-        },
-        updateItem(state){
-            state.showItems.splice(index,1);
-            state.showItems.spice(index,5);
         }
 
         
@@ -49,18 +41,7 @@ export  default new Vuex.Store({
              axios.post("http://localhost:3001/todos",item).then(response=>{
                  commit("addItems",response.data);
              })
-         }
-         updateItems({commit}){
-             axios.put("http://localhost:3001/todos").then(response=>{
-                 commit("updateItems",response.data);
-             })
-         }
-         deleteItem({commmit}){
-             axios.delete("http://localhost:3001/todos").then(response=>{
-                 commit("deleteItem",response.data);
-             })
-         }
-         
+         }   
          
      }
 
