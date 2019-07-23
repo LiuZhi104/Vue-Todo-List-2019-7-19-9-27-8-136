@@ -2,12 +2,12 @@
     <div>
         <input type="text" name="ListItem"  v-model="msg">
         <button id="button" @click="handleclick">Add</button>
-        <li>
+        <ul>
             <todo-item v-for="(item,index) in listItems" :key="index" :licontent="item"
                        :itemindex="index"
             >
             </todo-item>
-        </li>
+        </ul>
     </div>
 </template>
 

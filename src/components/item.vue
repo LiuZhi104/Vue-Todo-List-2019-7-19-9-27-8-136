@@ -1,12 +1,12 @@
 <template>
     <li >
         <div >
-            <input type="checkbox" v-model="licontent.isChecked">
-            <span v-if="!licontent.isEdit" @dblclick="onDblclick(licontent)">
-              <del v-if="licontent.isChecked">{{licontent.content}}</del>
-                <span v-else>{{licontent.content}}</span>
+            <input type="checkbox" v-model="content.isChecked">
+            <span v-if="!content.isEdit" @dblclick="onDblclick()">
+              <del v-if="content.isChecked">{{content.content}}</del>
+                <span v-else>{{content.content}}</span>
             </span>
-            <input type="text" v-else v-model="licontent.content" @keyup.enter="onSubmit(licontent)">
+            <input type="text" v-else v-model="content.content" @keyup.enter="onSubmit()">
         </div>
     </li>
 </template>
@@ -15,19 +15,22 @@
     export default {
         props:['licontent'],
         data () {
+            const { ...content } = this.licontent;
             return {
+                content,
                 isEdit:false,
                 isChecked: false
             }
         },
         methods:{
-            onDblclick(licontent){
-                licontent.isEdit = true,
-                this.$set(this.licontent, licontent)
+            onDblclick(){
+                this.content.isEdit = true,
+                this.$set(this.content, this.content.content)
                 // console.log('db', licontent)
             },
-            onSubmit(licontent){
-                licontent.isEdit=false
+            onSubmit(){
+                this.content.isEdit=false
+
             },
 
         },
