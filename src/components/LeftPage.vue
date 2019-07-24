@@ -1,8 +1,8 @@
 <template>
     <div>
         <ul>
-            <li><router-link :to="{name:'todolist'}"> todolist</router-link></li>
-            <li><router-link :to="{name:'mypage'}"> mypage</router-link></li>
+            <li><router-link :to="{name:'ToDoList'}"> todolist</router-link></li>
+            <li><router-link :to="{name:'MyPage'}"> mypage</router-link></li>
         </ul>
     </div>
 </template>

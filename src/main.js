@@ -5,39 +5,39 @@ import ToDoList from './components/ToDoList.vue'
 import welcome from './components/welcome.vue'
 import  axios from 'axios'
 import VueRouter from 'vue-router'
-import Welcome from './components/Welcome.vue'
+import Welcome from './components/welcome.vue'
 import index from './components/index.vue'
 import LeftPage from './components/LeftPage.vue'
 import Mypage from './components/Mypage.vue'
-//Vue.prototype.$axios = axios;
-//Vue.prototype.$router=router;
+Vue.prototype.$axios = axios;
+Vue.prototype.$router=router;
 Vue.use(axios)
 Vue.use(VueRouter)
 const routes = [
     {
         path:'/',
-        component:Welcome
+        component:welcome
       },
       {
         path:'/index/:userName',
-        redirect: '/index/:userName/todolist',
+        redirect: '/index/:userName/ToDoList',
         name:'index',
         component:index,
         children:[
           {
-            path:'todolist',
-            name:'todolist',
-            component:TodoList
+            path:'/ToDoList',
+            name:'ToDoList',
+            component:ToDoList
           },
           {
-            path:'mypage',
-            name:'mypage',
+            path:'/MyPage',
+            name:'MyPage',
             component:Mypage
           }
         ]
       },
       {
-        path:'/leftpage',
+        path:'/LeftPage',
         component:LeftPage
       }
     ]

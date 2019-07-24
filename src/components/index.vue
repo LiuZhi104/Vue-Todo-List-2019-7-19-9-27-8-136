@@ -9,12 +9,12 @@
 <script>
 import IndexHeader from './IndexHeader.vue'
 import LeftPage from './LeftPage.vue'
-import TodoList from './TodoList.vue'
+import ToDoList from './ToDoList.vue'
     export default {
     components:{
         IndexHeader,
         LeftPage,
-        TodoList
+        ToDoList
     }
     }
 </script>
