@@ -18,8 +18,6 @@ export default {
             let result=confirm("你真的要到welcome？")
             if (result==true){
                 this.$router.push("/")
-            }else{
-
             }
         }
     }

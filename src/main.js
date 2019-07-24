@@ -9,18 +9,19 @@ import Welcome from './components/welcome.vue'
 import index from './components/index.vue'
 import LeftPage from './components/LeftPage.vue'
 import Mypage from './components/Mypage.vue'
+
 Vue.prototype.$axios = axios;
 Vue.prototype.$router=router;
 Vue.use(axios)
 Vue.use(VueRouter)
+
 const routes = [
     {
         path:'/',
         component:welcome
       },
       {
-        path:'/index/:userName',
-        redirect: '/index/:userName/ToDoList',
+        path:'/index/:userName/ToDoList',
         name:'index',
         component:index,
         children:[

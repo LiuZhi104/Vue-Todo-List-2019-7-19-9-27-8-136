@@ -14,7 +14,6 @@ export default {
   // }
 }
 </script>
-this.$store.dispatch("getItems",print);
 <style>
   @import './assets/css/style.css';
 </style>
