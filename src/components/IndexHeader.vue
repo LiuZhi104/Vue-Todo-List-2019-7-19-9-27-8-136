@@ -15,9 +15,17 @@ export default {
     },
     methods:{
         backToWelcome(){
-            let result=confirm("你真的要到welcome？")
-            if (result==true){
-                this.$router.push("/")
+            return $route.push({path:'welcome'});
+
+        }
+    },
+    beforeRouteLeave (to, from , next) {
+        if(to.path ==='/'){
+            const answer = window.confirm('Do you really want to leave? you have unsaved changes!')
+            if (answer) {
+                next()
+            } else {
+                next(false)
             }
         }
     }

@@ -33,12 +33,12 @@ export  default new Vuex.Store({
     },
      actions:{
          getItems({commit}){
-             axios.get("http://localhost:3001/todos").then(response=>{
+             axios.get("http://localhost:3001/todos/").then(response=>{
                  commit("getItems",response.data);
              })
          },
          addItems({commit}){
-             axios.post("http://localhost:3001/todos",item).then(response=>{
+             axios.post("http://localhost:3001/todos/",item).then(response=>{
                  commit("addItems",response.data);
              })
          }   
